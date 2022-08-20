@@ -1,10 +1,18 @@
 ---
 - hosts: all
-
   vars_files:
     - default.config.yml
 
   pre_tasks:
+    - name: "Include ansible-modules-bitwarden"
+      include_role:
+        name: ansible-modules-bitwarden
+    - name: Load mas email and password
+      include_vars:
+        mas_email: "{{ lookup('bitwarden', 'Apple ID', field=Username) }}"
+        mas_password: "{{ lookup('bitwarden', 'Apple ID', field=Password) }}"
+    - debug:
+        msg: mas_email
     - name: Include playbook configuration.
       include_vars: "{{ item }}"
       with_fileglob:

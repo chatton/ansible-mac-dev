@@ -34,8 +34,14 @@ jobs:
         run: |
           cp tests/ansible.cfg ./ansible.cfg
           cp tests/hosts.ini ./hosts.ini
-          cp tests/config.yml ./config.yml
+          # cp tests/config.yml ./config.yml
+          
+          echo "mas_email: $MAS_EMAIL" >> default.config.yml
+          echo "mas_password: $MAS_PASSWORD" >> default.config.yml
           ansible-galaxy install -r requirements.yml
+        env:
+          MAS_EMAIL: "{{secrets.MAS_EMAIL}}"
+          MAS_PASSWORD: "{{secrets.MAS_PASSWORD}}"
       - name: Test the playbook's syntax.
         run: ansible-playbook main.yml --syntax-check
 
