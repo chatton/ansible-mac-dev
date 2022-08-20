@@ -48,6 +48,8 @@ homebrew_cask_apps:
   - brave-browser
   - signal
   - discord
+  - surfshark
+  - nextcloud
 
 configure_dock: true
 

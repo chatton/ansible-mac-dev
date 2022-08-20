@@ -9,6 +9,7 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
 
+
   roles:
   - role: elliotweiser.osx-command-line-tools
   - role: geerlingguy.dotfiles
@@ -19,4 +20,8 @@
     when: configure_dock
   tasks:
     - include_tasks: ./tasks/configure-sudoers.yml
-
+    - include_tasks: ./tasks/install-dmg.yml
+      vars:
+        # assumes M1 mac
+        app_name: Goland
+        dmg_url: "https://download.jetbrains.com/go/goland-2022.2.2-aarch64.dmg"

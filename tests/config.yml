@@ -25,9 +25,3 @@ homebrew_cask_apps:
   - spotify
   - brave-browser
 
-configure_dock: true
-dockitems_remove:
-  - Launchpad
-  - Photos
-  - "App Store"
-

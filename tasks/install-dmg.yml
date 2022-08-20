@@ -1,0 +1,22 @@
+---
+- local_action: stat path=/Applications/{{ app_name }}.app
+  register: app_exists
+  changed_when: False
+
+- command: mkdir -p ./tmp/
+  when: app_exists.stat.exists == False
+
+- get_url: url={{ dmg_url }} dest=./tmp/{{ app_name }}.dmg
+  when: app_exists.stat.exists == False
+
+- command: hdiutil attach ./tmp/{{ app_name }}.dmg -nobrowse -mountpoint ./tmp/{{ app_name }}
+  when: app_exists.stat.exists == False
+
+- shell: cp -aR ./tmp/{{ app_name }}/*.app /Applications/{{ app_name }}.app
+  when: app_exists.stat.exists == False
+
+- command: hdiutil detach ./tmp/{{ app_name }}/
+  when: app_exists.stat.exists == False
+
+- command: rm -R ./tmp/{{ app_name }}/*.app
+  when: app_exists.stat.exists == False
