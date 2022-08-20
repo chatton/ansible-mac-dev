@@ -1,0 +1,9 @@
+---
+- name: Add user to sudoers
+  become: true
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    line: '{{item}}	ALL=(ALL:ALL) NOPASSWD: ALL'
+    validate: /usr/sbin/visudo -cf %s
+  with_items: "{{users}}"

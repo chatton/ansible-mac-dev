@@ -1,0 +1,87 @@
+---
+mas_installed_apps:
+   - name: Magnet
+     id: 441258766
+   - name: Slack
+     id: 803453959
+   - name: Bitwarden
+     id: 1352778147
+   - name: Surfshark
+     id: 1437809329
+
+#mas_uninstalled_apps:
+#   - { id: 408981434, name: "iMovie" }
+#   - { id: 409183694, name: "Keynote" }
+#   - { id: 409201541, name: "Pages" }
+#   - { id: 409203825, name: "Numbers" }
+#   - { id: 682658836, name: "GarageBand" }
+#   - { id: 1295203466, name: "Microsoft Remote Desktop"}
+#   - { id: 1537120861, name: "Clipboard PRO"}
+
+users:
+   - chatton
+
+dotfiles_repo: https://github.com/chatton/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/checkouts/dotfiles
+dotfiles_files:
+   - .bash_profile
+
+homebrew_taps:
+   - homebrew/core
+   - homebrew/cask
+
+homebrew_installed_packages:
+   - fzf
+   - jq
+   - docker
+   - gh
+   - rsync
+   - tree
+   - watch
+   - act
+#   - logseq
+#   - spotify
+#   - brave-browser
+
+configure_dock: true
+
+dockitems_remove:
+   - Launchpad
+   - Photos
+   - "App Store"
+
+dockitems_persist:
+   - name: "Brave Browser"
+     path: "/Applications/Brave\ Browser.app/"
+     pos: 2
+   - name: "GoLand"
+     path: "/Applications/GoLand.app/"
+     pos: 3
+   - name: "Slack"
+     path: "/Applications/Slack.app/"
+     pos: 4
+   - name: "iTerm"
+     path: "/Applications/iTerm.app/"
+     pos: 5
+   - name: "Surfshark"
+     path: "/Applications/Surfshark.app/"
+     pos: 6
+   - name: "Spotify"
+     path: "/Applications/Spotify.app/"
+     pos: 7
+   - name: "Docker Desktop"
+     path: "/Applications/Docker.app/"
+     pos: 8
+   - name: "Signal"
+     path: "/Applications/Signal.app/"
+     pos: 9
+   - name: "Bitwarden"
+     path: "/Applications/Bitwarden.app/"
+     pos: 10
+   - name: "Discord"
+     path: "/Applications/Discord.app/"
+     pos: 11
+   - name: "Logseq"
+     path: "/Applications/Logseq.app/"
+     pos: 12
