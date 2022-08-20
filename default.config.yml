@@ -47,6 +47,7 @@ homebrew_cask_apps:
   - spotify
   - brave-browser
   - signal
+  - discord
 
 configure_dock: true
 
