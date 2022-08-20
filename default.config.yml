@@ -46,6 +46,7 @@ homebrew_cask_apps:
   - logseq
   - spotify
   - brave-browser
+  - signal
 
 configure_dock: true
 
