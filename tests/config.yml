@@ -1,0 +1,33 @@
+---
+
+dotfiles_repo: https://github.com/chatton/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/checkouts/dotfiles
+dotfiles_files:
+  - .bash_profile
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_installed_packages:
+  - fzf
+  - jq
+  - docker
+  - gh
+  - rsync
+  - tree
+  - watch
+  - act
+
+homebrew_cask_apps:
+  - logseq
+  - spotify
+  - brave-browser
+
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - Photos
+  - "App Store"
+

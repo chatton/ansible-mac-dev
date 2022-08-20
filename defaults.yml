@@ -40,9 +40,11 @@ homebrew_installed_packages:
    - tree
    - watch
    - act
-#   - logseq
-#   - spotify
-#   - brave-browser
+
+homebrew_cask_apps:
+  - logseq
+  - spotify
+  - brave-browser
 
 configure_dock: true
 
