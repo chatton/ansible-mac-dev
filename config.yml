@@ -25,7 +25,12 @@ dotfiles_repo: https://github.com/chatton/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/checkouts/dotfiles
 dotfiles_files:
-   - .bash_profile
+  - .bash_profile
+  - .ssh_config
+
+symlinks:
+  - link_path: .ssh_config
+    file_path: ~/.ssg/config
 
 homebrew_taps:
    - homebrew/core
@@ -48,8 +53,8 @@ homebrew_cask_apps:
   - brave-browser
   - signal
   - discord
-  - surfshark
   - nextcloud
+  - zoom
 
 configure_dock: true
 
@@ -92,3 +97,7 @@ dockitems_persist:
    - name: "Logseq"
      path: "/Applications/Logseq.app/"
      pos: 12
+
+dmgs:
+  - app_name: Goland
+    dmg_url: "https://download.jetbrains.com/go/goland-2022.2.2-aarch64.dmg"

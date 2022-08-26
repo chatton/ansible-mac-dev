@@ -1,0 +1,8 @@
+---
+- name: Configure symbolic link
+  file:
+    src: "{{ item.file_path }}"
+    dest: "{{ item.link_path }}"
+    owner: "{{ users[0] }}"
+    state: link
+  with_items: {{ symlinks }}
