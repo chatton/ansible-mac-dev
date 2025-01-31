@@ -46,6 +46,7 @@ homebrew_installed_packages:
    - watch
    - act
    - bitwarden-cli
+   - tmux
 
 homebrew_cask_apps:
   - logseq
